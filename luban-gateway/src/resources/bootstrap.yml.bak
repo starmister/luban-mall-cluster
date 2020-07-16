@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+      nacos:
+        config:
+          server-addr: 192.168.159.8:8848 #配置中心的地址
+          file-extension: yml #配置文件结尾的配置
+          shared-dataids: mall-common.yml #商城公共配置
+        discovery:
+          server-addr: 192.168.159.8:8848
+  profiles:
+    active: dev
+

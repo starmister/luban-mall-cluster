@@ -1,0 +1,53 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: mall-oauth
+          uri: lb://mall-oauth
+          predicates:
+            - Path=/oauth/**
+        - id: mall-member
+          uri: lb://mall-member
+          predicates:
+            - Path=/sso/**,/member/**
+        - id: mall-order
+          uri: lb://mall-order
+          predicates:
+            - Path=/cart/**,/order/**
+        - id: mall-product
+          uri: lb://mall-product
+          predicates:
+            - Path=/pms/**
+        - id: mall-coupons
+          uri: lb://mall-coupons
+          predicates:
+            - Path=/coupon/**
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+management: #开启SpringBoot Admin的监控
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
+luban:
+  gateway:
+    shouldSkipUrls:
+      - /oauth/**
+      - /sso/**

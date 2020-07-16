@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: mall-product
+  cloud:
+      nacos:
+        config:
+          server-addr: localhost:8848 #配置中心的地址
+          file-extension: yml #配置文件结尾的配置
+          shared-dataids: mall-nacos.yml,mall-db-common.yml #商城公共配置
+          refreshable-dataids: mall-nacos.yml,mall-db-common.yml
+  profiles:
+    active: dev

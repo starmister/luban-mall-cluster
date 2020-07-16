@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: luban-auth
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+        shared-dataids: mall-db-common.yml,mall-nacos.yml
+        refreshable-dataids: mall-db-common.yml,mall-nacos.yml
+logging:
+  level:
+    com:
+     alibaba:
+      cloud:
+        nacos:
+          client: warn

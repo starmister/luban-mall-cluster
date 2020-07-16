@@ -1,0 +1,36 @@
+{
+  "groups": [
+    {
+      "name": "luban.jwt",
+      "type": "com.luban.properties.JwtCAProperties",
+      "sourceType": "com.luban.properties.JwtCAProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "luban.jwt.key-pair-alias",
+      "type": "java.lang.String",
+      "description": "证书别名",
+      "sourceType": "com.luban.properties.JwtCAProperties"
+    },
+    {
+      "name": "luban.jwt.key-pair-name",
+      "type": "java.lang.String",
+      "description": "证书名称",
+      "sourceType": "com.luban.properties.JwtCAProperties"
+    },
+    {
+      "name": "luban.jwt.key-pair-secret",
+      "type": "java.lang.String",
+      "description": "证书私钥",
+      "sourceType": "com.luban.properties.JwtCAProperties"
+    },
+    {
+      "name": "luban.jwt.key-pair-store-secret",
+      "type": "java.lang.String",
+      "description": "证书存储密钥",
+      "sourceType": "com.luban.properties.JwtCAProperties"
+    }
+  ],
+  "hints": []
+}
